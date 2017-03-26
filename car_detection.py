@@ -364,7 +364,7 @@ class Car_Frame:
 
 
 if __name__=='__main__':
-    if 0:
+    if 1:
         orient=9
         pix_per_cell=8
         cell_per_block=2
@@ -398,11 +398,20 @@ if __name__=='__main__':
             heat = apply_threshold(heat,8)
             heatmap = np.clip(heat, 0, 255)
             labels = label(heatmap)
-            cv2.imshow('cars',draw_boxes(image, hot_windows, color=(0, 0, 255), thick=6))
-            cv2.waitKey(0)
-            cv2.imshow('cars',draw_labeled_bboxes(image, labels))
-            cv2.waitKey(0)
-    if 1:
+            # cv2.imshow('cars',draw_boxes(image, hot_windows, color=(0, 0, 255), thick=6))
+            # cv2.waitKey(0)
+            # cv2.imshow('cars',draw_labeled_bboxes(image, labels))
+            # cv2.waitKey(0)
+            # cv2.imwrite('output_images//'+str.replace(test_image,'test_images','all_windows'),draw_boxes(image, hot_windows, color=(0, 0, 255), thick=6))
+            # cv2.imwrite('output_images//'+str.replace(test_image,'test_images','heatmaps'),heatmap)
+            # cv2.imwrite('output_images//'+str.replace(test_image,'test_images','detected'),draw_labeled_bboxes(image, labels))
+            if 0:
+                features, hog_image = hog(image[:,:,0], orientations=orient, pixels_per_cell=(pix_per_cell, pix_per_cell),
+                                  cells_per_block=(cell_per_block, cell_per_block), transform_sqrt=True, 
+                                  visualise=True, feature_vector=True)
+                hog_image = (255*np.dstack((hog_image,hog_image,hog_image))/np.max(hog_image)).astype(np.uint8)
+                cv2.imwrite('output_images//'+str.replace(test_image,'test_images','hogs'),hog_image)
+    if 0:
         process_video('test_video.mp4','test_video_output.mp4')
-    if 1:
+    if 0:
         process_video('project_video.mp4','project_video_output.mp4')
