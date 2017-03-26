@@ -15,7 +15,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 [image1]: ./output_images/1.png
-[image2]: ./output_images/1.png
+[image2]: ./output_images/image93.png
 [image3]: ./test_images/test6.jpg
 [image4]: ./output_images/hogs/test6.jpg
 [image5]: ./output_images/all_windows/test6.jpg
@@ -62,7 +62,6 @@ At first I had a slide_window and a search_windows function that would be used t
 
 The scales used for the test images were 1x to 2x in 7 steps. Ideally this would be limited to certain horizons, but because of implementation, each window scale was scanned across the whole image. This meant that dealing with the heatmap threshold later on would need to be a little higher than the Udacity lessons had.
 
-![alt text][image3]
 
 ####2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
